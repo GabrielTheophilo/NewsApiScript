@@ -3,6 +3,7 @@ import json
 from apikey import ApiKey as ApiKey
 
 def printMenu():
+    #Main menu to output status choices to users
     print("Quais notícias estarão na sua pesquisa?")
     print("---------------------------------------")
     print("1 - Top Headlines")
@@ -10,33 +11,38 @@ def printMenu():
     print("3 - Sair")
     
 def OpenFileWrite(str, *args):
+    #Function to write a file with the name of the user's query
+    # 1º block -> Create file, write and close
+    # 2º block -> Open existing file, write and close
     try:
-        arq = open(f'{str}.json', 'x')
-        arq.write(*args)
-        arq.close()
+        file = open(f'{str}.json', 'x')
+        file.write(*args)
+        file.close()
         
     except:
-        arq = open(f'{str}.json', 'a')
-        arq.write(*args)
-        arq.close()
+        file = open(f'{str}.json', 'a')
+        file.write(*args)
+        file.close()
 
+# while True is an infinite loop because every option breaks the program or asks again for user input
+# If user input is valid, the program runs and breaks (even if the request is unsuccessful)
 
 while True:
-    printMenu()
-    status = int(input("\nSua escolha: "))
-    if status < 1 or status>3:
-        print("Selecione uma opção válida")
+    printMenu()                                             # PRINT MAIN MENU
+    status = int(input("\nSua escolha: "))                  # Asks for user input
+    if status < 1 or status>3:                              # Checks ir user input is invalid
+        print("Selecione uma opção válida")                 # If user input is invalid, it will run the inicial input again
         status = int(input("\n Sua escolha: "))
-    elif status == 1: 
+    elif status == 1:                                       # If user input is valid, and the user wants to search the top-headlines of an subjetct, run the block below
         url1 = ('https://newsapi.org/v2/top-headlines?')
-        print("Selecione o termo que deseja pesquisar: ")
+        print("Selecione o termo que deseja pesquisar: ")   # Input of the query string
         query = str(input(''))
         query1 = (f'q={query}&')
         apiKey = (ApiKey.key)
-        response = requests.get(url1+query1+apiKey)
-        json_data = response.json()
-        data = json.dumps(json_data, indent=4)
-        file = OpenFileWrite(query, data)
+        response = requests.get(url1+query1+apiKey)         # GET request to url
+        json_data = response.json()                         # GET response as json being stored in json_data variable
+        data = json.dumps(json_data, indent=4)              # json output and parsing with indent
+        file = OpenFileWrite(query, data)                   
 
         print (data)
         break
@@ -47,28 +53,12 @@ while True:
         query1 = (f'q={query}&')
         query2 = ('pageSize=100&')
         apiKey = (ApiKey.key)
-        
-        print("Quantas páginas de resultados deseja procurar?")
-        pageNum = int(input(""))
-        while pageNum<=0 or pageNum>=50:
-            print("Escolha inválida, por favor mantenha o pedido entre 1 e 50 páginas")
-            pageNum = int(input("Insira o número de páginas"))
-        if pageNum == 1:
-            response = requests.get(url1+query1+query2+apiKey)
-            json_data = response.json()
-            data = json.dumps(json_data, indent=4)
-            file = OpenFileWrite(query, data)
-            print (data)
-            break
-        else:
-            for x in range(1, pageNum):
-                pageNumero = (f'page={x}&')
-                response = requests.get(url1+query1+query2+pageNumero+apiKey)
-                json_data = response.json()
-                data = json.dumps(json_data, indent=4)
-                file = OpenFileWrite(query, data)
-                print (data)
-            
+        response = requests.get(url1+query1+query2+apiKey)
+        json_data = response.json()
+        data = json.dumps(json_data, indent=4)
+        file = OpenFileWrite(query, data)
+        print (data)
+        break
             
 
     elif status == 3:
