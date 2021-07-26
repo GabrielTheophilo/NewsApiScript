@@ -16,7 +16,7 @@ git clone https://github.com/GabrielTheophilo/NewsApiScript.git
 
 4 - Open the apikey.py file and add the 32 charachter code after the 'apikey=', i.e 'apikey=YOURAPIKEY_HERE'
 
-5 - Run the newsscript.py and follow the CLI commands
+5 - Run the newsapiscript.py and follow the CLI commands
 
 IMPORTANT: If you have the free plan on the newsapi website, your search will be limited to ONE page, so when the program asks for the number of pages, make sure to specify "1", or else the API will return an error, with the code "maximumResultsReached".
 
