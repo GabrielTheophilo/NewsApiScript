@@ -2,6 +2,14 @@ import requests
 import json
 from apikey import ApiKey as ApiKey
 
+#
+# Em construção
+#
+# Para fazer: 
+# 1 - Organizar as querys em funções para melhorar a organização do código
+# 2 - Definir istruções apenas em português ou em inglês
+#
+
 def printMenu():
     #Main menu to output status choices to users
     print("Quais notícias estarão na sua pesquisa?")
@@ -39,13 +47,25 @@ while True:
         query = str(input(''))
         query1 = (f'q={query}&')
         apiKey = (ApiKey.key)
-        response = requests.get(url1+query1+apiKey)         # GET request to url
-        json_data = response.json()                         # GET response as json being stored in json_data variable
-        data = json.dumps(json_data, indent=4)              # json output and parsing with indent
-        file = OpenFileWrite(query, data)                   
+        print("Gostaria de pesquisar globalmente ou apenas notícias em canais brasileiros?")
+        br = str(input("").lower())
+        if br=="brasil" or br=="brasileiros" or br=="brazil":
+            countryQuery = ('country=br&')
+            response = requests.get(url1+countryQuery+query1+apiKey)         # GET request to url
+            json_data = response.json()                         # GET response as json being stored in json_data variable
+            data = json.dumps(json_data, indent=4)              # json output and parsing with indent
+            file = OpenFileWrite(query, data)                   
+            print (data)
+            break
+        else:
+            response = requests.get(url1+query1+apiKey)         # GET request to url
+            json_data = response.json()                         # GET response as json being stored in json_data variable
+            data = json.dumps(json_data, indent=4)              # json output and parsing with indent
+            file = OpenFileWrite(query, data)                   
+            print (data)
+            break
+            
 
-        print (data)
-        break
     elif status == 2: 
         url1 = ('https://newsapi.org/v2/everything?')
         print("Selecione o termo que deseja pesquisar: ")
@@ -53,13 +73,61 @@ while True:
         query1 = (f'q={query}&')
         query2 = ('pageSize=100&')
         apiKey = (ApiKey.key)
-        response = requests.get(url1+query1+query2+apiKey)
-        json_data = response.json()
-        data = json.dumps(json_data, indent=4)
-        file = OpenFileWrite(query, data)
-        print (data)
-        break
-            
+        print("Deseja receber notícias somente em português?")
+        language = str(input("").lower())
+        if language=="sim":
+            languageQuery = ('language=pt&')
+            print("Deseja ordenar por relevância ou popularidade? Escreva abaixo")
+            sort = str(input("".lower()))
+            if sort=="relevância":
+                sortQuery = ('sortBy=relevancy&')
+                response = requests.get(url1+query1+languageQuery+sortQuery+query2+apiKey)
+                json_data = response.json()
+                data = json.dumps(json_data, indent=4)
+                file = OpenFileWrite(query, data)
+                print (data)
+                break
+            elif sort=="popularidade":
+                sortQuery = ('sortBy=popularity&')
+                response = requests.get(url1+query1+languageQuery+sortQuery+query2+apiKey)
+                json_data = response.json()
+                data = json.dumps(json_data, indent=4)
+                file = OpenFileWrite(query, data)
+                print (data)
+                break
+            else:
+                response = requests.get(url1+query1+languageQuery+query2+apiKey)
+                json_data = response.json()
+                data = json.dumps(json_data, indent=4)
+                file = OpenFileWrite(query, data)
+                print (data)
+                break
+        else: 
+            print("Deseja ordenar por relevância ou popularidade? Escreva abaixo")
+            sort = str(input("".lower()))
+            if sort=="relevância":
+                sortQuery = ('sortBy=relevancy&')
+                response = requests.get(url1+query1+sortQuery+query2+apiKey)
+                json_data = response.json()
+                data = json.dumps(json_data, indent=4)
+                file = OpenFileWrite(query, data)
+                print (data)
+                break
+            elif sort=="popularidade":
+                sortQuery = ('sortBy=popularity&')
+                response = requests.get(url1+query1+sortQuery+query2+apiKey)
+                json_data = response.json()
+                data = json.dumps(json_data, indent=4)
+                file = OpenFileWrite(query, data)
+                print (data)
+                break       
+            else:
+                response = requests.get(url1+query1+query2+apiKey)
+                json_data = response.json()
+                data = json.dumps(json_data, indent=4)
+                file = OpenFileWrite(query, data)
+                print (data)
+                break
 
     elif status == 3:
         break
