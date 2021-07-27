@@ -1,10 +1,8 @@
-<h1 align="center"> ✅NewsApiScript✅</h1>
+<h1 align="center"> NewsApiScript</h1>
 <p align="center">This program is intended to be used for searching several news sites at once with an user-provided keyword. It searches through several sites like BBC, CBS, FoxNews and many others. Instructions as follows</p>
 <p align="center">Script for personal use of the NewsApi endpoint. Returns a json file as specified in the docs of the newsApi</p>
 
-<p align="center">🚧Para instruções em PT-BR, acessar o README-ptBr.md🚧</p>
-
-
+<p align="center">Para instruções em PT-BR, acessar o README-ptBr.md</p>
 
 # Use of this script
 
