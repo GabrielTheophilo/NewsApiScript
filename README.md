@@ -1,10 +1,10 @@
 <h1 align="center"> NewsApiScript</h1>
 <p align="center">Este programa é feito para pesquisar diversos canais de notícias com uma palavra chave dada pelo usuário. Ele procura diversos sites como BBC, FoxNews, CBS e muitos outros. Instruções de uso abaixo</p>
-<h2 align="center">Este script consome a NewsApi para trazer diversas notícias de uma vez. Retorna um arquivo .txt com as notícias, links e informações. Ideal para pesquisas onde há a necessidade de pesquisar diversas fontes de uma vez</h2>
+<p align="center">Este script consome a NewsApi para trazer diversas notícias de uma vez. Retorna um arquivo .txt com as notícias, links e informações. Ideal para pesquisas onde há a necessidade de pesquisar diversas fontes de uma vez</p>
 
 <h3 align="center"> For english instructions, access the README-en.md file</h3>
 
-<h2> PARA BAIXAR ESSE SCRIPT COMO .EXE E RODAR NO SEU COMPUTADOR, ENTRE NESTE [REPOSITÓRIO](https://github.com/GabrielTheophilo/NewsApiScript.exe)
+<p> PARA BAIXAR ESSE SCRIPT COMO .EXE E RODAR NO SEU COMPUTADOR, ENTRE NESTE [REPOSITÓRIO](https://github.com/GabrielTheophilo/NewsApiScript.exe)</p>
 
 
 # Uso deste script
