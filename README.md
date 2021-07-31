@@ -1,31 +1,35 @@
 <h1 align="center"> NewsApiScript</h1>
-<p align="center">This program is intended to be used for searching several news sites at once with an user-provided keyword. It searches through several sites like BBC, CBS, FoxNews and many others. Instructions as follows</p>
-<p align="center">This script uses the NewsApi to return several news articles at once. It returns a .txt file with the news, links and additional information. Ideal for research where a large number of articles about a topic are needed.</p>
+<p align="center">Este programa é feito para pesquisar diversos canais de notícias com uma palavra chave dada pelo usuário. Ele procura diversos sites como BBC, FoxNews, CBS e muitos outros. Instruções de uso abaixo</p>
+<h2 align="center">Este script consome a NewsApi para trazer diversas notícias de uma vez. Retorna um arquivo .txt com as notícias, links e informações. Ideal para pesquisas onde há a necessidade de pesquisar diversas fontes de uma vez</h2>
 
-<h2 align="center">Para instruções em PT-BR, acessar o README-ptBr.md</h2>
+<h3 align="center"> For english instructions, access the README-en.md file</h3>
 
-# Use of this script
+<h2> PARA BAIXAR ESSE SCRIPT COMO .EXE E RODAR NO SEU COMPUTADOR, ENTRE NESTE [REPOSITÓRIO](https://github.com/GabrielTheophilo/NewsApiScript.exe)
 
-This program requires Python 3.x.x to run
 
-1 - To use this python script you need to clone the repository: 
+# Uso deste script
+
+No momento, este script precisa de Python 3 para rodar (e a biblioteca adicional requests, que pode ser baixada ao rodar o requirements.txt)
+
+1 - Para usar esse script python primeiramente você precisa clonar o repositório: 
 ```bash
 git clone https://github.com/GabrielTheophilo/NewsApiScript.git
 ```
-2 - CD into the directory and install the required libraries with python:
+
+2 - Dê um CD no directory e instale as bibliotecas que vamos usar em python:
 ```bash
 python -m pip install requirements.txt
 ```
-3 - Open the folder that you just cloned
 
-4 - Register a ApiKey for your personal use at [NewsApi](https://newsapi.org/)
+3 - Abra a pasta que você clonou
 
-5 - Open the apikey.py file and add the 32 charachter code after the 'apikey=', i.e 'apikey=YOURAPIKEY_HERE'
+4 - Registre uma chave para a API no site [NewsApi](https://newsapi.org/)
 
-6 - Run the newsapiscript.py and follow the CLI commands
+5 - Abra o arquivo apikey.py e adicione a chave de 32 caracteres após o 'apikey=', exemplo: 'apikey=SUACHAVEAQUI'
 
-IMPORTANT: If you have the free plan on the newsapi website, your search will be limited to ONE page, so when the program asks for the number of pages, make sure to specify "1", or else the API will return an error, with the code "maximumResultsReached".
+6 - Rode o newsscript.py e siga os comandos do terminal
 
-7 - After you run the code, a .json file will be created with the information and links about the news you searched for. Open with any text editor or IDE of your choosing to access the .json information.
+IMPORTANTE: Se você tem o plano gratuito da API, sua pesquisa estará limitada a uma página, então quando o programa pedir o número de páginas da sua busca, por favor especifique como "1", ou a API retornará um erro após imprimir a primeira página, com o código "maximumResultsReached".
 
+7 - Depois de rodar o código, um arquivo .json será criado com as informações e links sobre o tópico que você pesquisou. Abra com qualquer editor de texto ou IDE de sua preferência para acessar o arquivo .json.
 
