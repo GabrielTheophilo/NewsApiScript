@@ -43,7 +43,8 @@ def OpenFileWriteTxt(str,*args):
 def txtPrint(data, query):
     wdata = json.loads(data)
     i = 0 
-    for x in wdata['articles'][i]:
+    for x in wdata['articles']:
+       print(i)
        a = wdata['articles'][i]['source']['name']
        b = wdata['articles'][i]['author']
        c = wdata['articles'][i]['title']
@@ -54,7 +55,7 @@ def txtPrint(data, query):
        i += 1
        print(f"{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n")
        print("--------------------------------------")
-       cdata = (f"{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n\n\n\n\n")
+       cdata = (f"TEXTO{i}\n\n{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n\n\n\n\n")
        file = OpenFileWriteTxt(query,cdata)
 
 def jsonPrint(data, query):
