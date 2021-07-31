@@ -17,6 +17,7 @@ git clone https://github.com/GabrielTheophilo/NewsApiScript.git
 python -m pip install requirements.txt
 ```
 3 - Open the folder that you just cloned
+
 4 - Register a ApiKey for your personal use at [NewsApi](https://newsapi.org/)
 
 5 - Open the apikey.py file and add the 32 charachter code after the 'apikey=', i.e 'apikey=YOURAPIKEY_HERE'

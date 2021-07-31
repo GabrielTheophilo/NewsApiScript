@@ -18,7 +18,18 @@ def printMenu():
     print("---------------------------------------")
     
     
-def OpenFileWrite(str, *args):
+def OpenFileWriteJson(str,*args):
+    try:
+        file = open(f'{str}.json', 'x')
+        file.write(*args)
+        file.close()
+        
+    except:
+        file = open(f'{str}.json', 'a')
+        file.write(*args)
+        file.close()
+        
+def OpenFileWriteTxt(str,*args):
     try:
         file = open(f'{str}.txt', 'x')
         file.write(*args)
@@ -28,6 +39,27 @@ def OpenFileWrite(str, *args):
         file = open(f'{str}.txt', 'a')
         file.write(*args)
         file.close()
+
+def txtPrint(data, query):
+    wdata = json.loads(data)
+    i = 0 
+    for x in wdata['articles'][i]:
+       a = wdata['articles'][i]['source']['name']
+       b = wdata['articles'][i]['author']
+       c = wdata['articles'][i]['title']
+       d = wdata['articles'][i]['description']
+       e = wdata['articles'][i]['url']
+       f = wdata['articles'][i]['publishedAt']
+       g = wdata['articles'][i]['content']
+       i += 1
+       print(f"{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n")
+       print("--------------------------------------")
+       cdata = (f"{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n\n\n\n\n")
+       file = OpenFileWriteTxt(query,cdata)
+
+def jsonPrint(data, query):
+    file = OpenFileWriteJson(query, data)
+    
 
 class StringUrl(ApiKey):
     key = ApiKey.key
@@ -50,13 +82,15 @@ class StringUrl(ApiKey):
             StringUrl.url += StringUrl.relevancy
         elif StringSort == '2':
             StringUrl.url += StringUrl.popularity
-        elif StringSort == '3':
-            pass
-        
+
         if LanguageQuery == '1':
             StringUrl.url += StringUrl.language
-        elif LanguageQuery == '':
-            pass
+        StringUrl.url += (f'q={Query}&')
+        StringUrl.url += StringUrl.key
+        StringUrl.query += Query
+        
+        return StringUrl.url
+
         
     def StringAll():
         return str(input('Deseja ver todas as notícias ou apenas as Top-Headlines? || 1 para Todas, 2 para Principais: '))
@@ -79,19 +113,9 @@ if __name__ == '__main__':
     response = requests.get(f'{url}')
     json_data = response.json()
     data = json.dumps(json_data, indent=4)
-    wdata = json.loads(data)
-    i = 0 
-    for x in wdata['articles'][i]:
-       a = wdata['articles'][i]['source']['name']
-       b = wdata['articles'][i]['author']
-       c = wdata['articles'][i]['title']
-       d = wdata['articles'][i]['description']
-       e = wdata['articles'][i]['url']
-       f = wdata['articles'][i]['publishedAt']
-       g = wdata['articles'][i]['content']
-       i += 1
-       print(f"{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n")
-       print("--------------------------------------")
-       cdata = (f"{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n\n\n\n\n")
-       file = OpenFileWrite(StringUrl.query, cdata)
+    escolha = str(input("Escolha uma saída para o arquivo --> txt(.txt) ou json(.json): ").lower())
+    if escolha=='txt':
+        txtPrint(data, StringUrl.query)
+    elif escolha=='json':
+        jsonPrint(data, StringUrl.query)
     print (data)
