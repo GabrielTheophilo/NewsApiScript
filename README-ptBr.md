@@ -9,16 +9,19 @@
 git clone https://github.com/GabrielTheophilo/NewsApiScript.git
 ```
 
-2 - Abra a pasta que você clonou
+2 - Dê um CD no directory e instale as bibliotecas que vamos usar em python:
+```bash
+python -m pip install requirements.txt
+```
 
-3 - Registre uma chave para a API no site [NewsApi](https://newsapi.org/)
+3 - Abra a pasta que você clonou
 
-4 - Abra o arquivo apikey.py e adicione a chave de 32 caracteres após o 'apikey=', exemplo: 'apikey=SUACHAVEAQUI'
+4 - Registre uma chave para a API no site [NewsApi](https://newsapi.org/)
 
-5 - Rode o newsscript.py e siga os comandos do terminal
+5 - Abra o arquivo apikey.py e adicione a chave de 32 caracteres após o 'apikey=', exemplo: 'apikey=SUACHAVEAQUI'
+
+6 - Rode o newsscript.py e siga os comandos do terminal
 
 IMPORTANTE: Se você tem o plano gratuito da API, sua pesquisa estará limitada a uma página, então quando o programa pedir o número de páginas da sua busca, por favor especifique como "1", ou a API retornará um erro após imprimir a primeira página, com o código "maximumResultsReached".
 
-6 - Depois de rodar o código, um arquivo .json será criado com as informações e links sobre o tópico que você pesquisou. Abra com qualquer editor de texto ou IDE de sua preferência para acessar o arquivo .json.
-
-
+7 - Depois de rodar o código, um arquivo .json será criado com as informações e links sobre o tópico que você pesquisou. Abra com qualquer editor de texto ou IDE de sua preferência para acessar o arquivo .json.

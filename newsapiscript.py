@@ -17,17 +17,15 @@ def printMenu():
     print("Tudo")
     print("---------------------------------------")
     
+    
 def OpenFileWrite(str, *args):
-    #Function to write a file with the name of the user's query
-    # 1º block -> Create file, write and close
-    # 2º block -> Open existing file, write and close
     try:
-        file = open(f'{str}.json', 'x')
+        file = open(f'{str}.txt', 'x')
         file.write(*args)
         file.close()
         
     except:
-        file = open(f'{str}.json', 'a')
+        file = open(f'{str}.txt', 'a')
         file.write(*args)
         file.close()
 
@@ -43,25 +41,22 @@ class StringUrl(ApiKey):
     url = ''
     query = ''
     def __init__(StringAll, StringSort,LanguageQuery, Query):
-        if StringAll == '1':
+        if StringAll == '1' or StringAll == '':
             StringUrl.url += StringUrl.urlAll
         else:
             StringUrl.url += StringUrl.urlTop
             
-        if StringSort == '1':
+        if StringSort == '1' or StringSort == '':
             StringUrl.url += StringUrl.relevancy
         elif StringSort == '2':
             StringUrl.url += StringUrl.popularity
+        elif StringSort == '3':
+            pass
         
         if LanguageQuery == '1':
             StringUrl.url += StringUrl.language
-        
-        query = Query
-        StringUrl.query += query
-        query1 = (f'q={query}&')
-        StringUrl.url += query1
-        StringUrl.url += StringUrl.ApiKey()
-        return StringUrl.url
+        elif LanguageQuery == '':
+            pass
         
     def StringAll():
         return str(input('Deseja ver todas as notícias ou apenas as Top-Headlines? || 1 para Todas, 2 para Principais: '))
@@ -77,7 +72,6 @@ class StringUrl(ApiKey):
     def ApiKey():
         return str(ApiKey.key)
         
-        
 if __name__ == '__main__':
     printMenu()
     url = StringUrl.__init__(StringUrl.StringAll(), StringUrl.StringSort(), StringUrl.LanguageQuery(), StringUrl.Query())
@@ -85,5 +79,19 @@ if __name__ == '__main__':
     response = requests.get(f'{url}')
     json_data = response.json()
     data = json.dumps(json_data, indent=4)
-    file = OpenFileWrite(StringUrl.query, data)
+    wdata = json.loads(data)
+    i = 0 
+    for x in wdata['articles'][i]:
+       a = wdata['articles'][i]['source']['name']
+       b = wdata['articles'][i]['author']
+       c = wdata['articles'][i]['title']
+       d = wdata['articles'][i]['description']
+       e = wdata['articles'][i]['url']
+       f = wdata['articles'][i]['publishedAt']
+       g = wdata['articles'][i]['content']
+       i += 1
+       print(f"{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n")
+       print("--------------------------------------")
+       cdata = (f"{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n\n\n\n\n")
+       file = OpenFileWrite(StringUrl.query, cdata)
     print (data)
