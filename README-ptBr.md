@@ -1,9 +1,12 @@
 <h1 align="center"> NewsApiScript</h1>
 <p align="center">Este programa é feito para pesquisar diversos canais de notícias com uma palavra chave dada pelo usuário. Ele procura diversos sites como BBC, FoxNews, CBS e muitos outros. Instruções de uso abaixo</p>
-<p align="center">Script para uso pessoal do endpoint do NewsApi. Retorna um arquivo .json como especificado pela documentação do newsApi</p>
+<h2 align="center">Este script consome a NewsApi para trazer diversas notícias de uma vez. Retorna um arquivo .txt com as notícias, links e informações. Ideal para pesquisas onde há a necessidade de pesquisar diversas fontes de uma vez</h2>
 
 
 # Uso deste script
+
+No momento, este script precisa de Python 3 para rodar (e a biblioteca adicional requests, que pode ser baixada ao rodar o requirements.txt)
+
 1 - Para usar esse script python primeiramente você precisa clonar o repositório: 
 ```bash
 git clone https://github.com/GabrielTheophilo/NewsApiScript.git
