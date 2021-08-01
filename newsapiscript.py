@@ -1,18 +1,13 @@
 import requests
 import json
 from apikey import ApiKey as ApiKey
+from printmenu import PrintMenu
 import os.path
 import os
 
 def printMenu():
     #Main menu to output status choices to users
-    print(r''' _   _                      _          _ ____            _       _   
-| \ | | _____      _____   / \   _ __ (_) ___|  ___ _ __(_)_ __ | |_ 
-|  \| |/ _ \ \ /\ / / __| / _ \ | '_ \| \___ \ / __| '__| | '_ \| __|
-| |\  |  __/\ V  V /\__ \/ ___ \| |_) | |___) | (__| |  | | |_) | |_ 
-|_| \_|\___| \_/\_/ |___/_/   \_\ .__/|_|____/ \___|_|  |_| .__/ \__|
-                                |_|                       |_|        '''
-    )
+    PrintMenu.__init__()
     print("Quais notícias estarão na sua pesquisa?")
     print("---------------------------------------")
     print("Top Headlines")
