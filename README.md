@@ -4,7 +4,7 @@
 
 <h3 align="center"> For english instructions, access the README-en.md file</h3>
 
-<p> PARA BAIXAR ESSE SCRIPT COMO .EXE E RODAR NO SEU COMPUTADOR, ENTRE NESTE [REPOSITÓRIO](https://github.com/GabrielTheophilo/NewsApiScript.exe)</p>
+<p align="center"> PARA BAIXAR ESSE SCRIPT COMO .EXE E RODAR NO SEU COMPUTADOR, ENTRE NESTE [REPOSITÓRIO](https://github.com/GabrielTheophilo/NewsApiScript.exe)</p>
 
 
 # Uso deste script

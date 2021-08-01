@@ -1,6 +1,8 @@
 import requests
 import json
 from apikey import ApiKey as ApiKey
+import os.path
+import os
 
 def printMenu():
     #Main menu to output status choices to users
@@ -19,30 +21,34 @@ def printMenu():
     
     
 def OpenFileWriteJson(str,*args):
+    username = os.getlogin()
+    
     try:
-        file = open(f'{str}.json', 'x')
+        file = open(f'C:\\Users\\{username}\\Desktop\\{str}.json', 'x')
         file.write(*args)
         file.close()
         
     except:
-        file = open(f'{str}.json', 'a')
+        file = open(f'C:\\Users\\{username}\\Desktop\\{str}.json' 'a')
         file.write(*args)
         file.close()
         
 def OpenFileWriteTxt(str,*args):
+    username = os.getlogin()
     try:
-        file = open(f'{str}.txt', 'x')
+        file = open(f'C:\\Users\\{username}\\Desktop\\{str}.txt', 'x')
         file.write(*args)
         file.close()
         
     except:
-        file = open(f'{str}.txt', 'a')
+        file = open(f'C:\\Users\\{username}\\Desktop\\{str}.txt', 'a')
         file.write(*args)
         file.close()
 
 def txtPrint(data, query):
     wdata = json.loads(data)
-    i = 0 
+    i = 0
+    cdata = ''
     for x in wdata['articles']:
        print(i)
        a = wdata['articles'][i]['source']['name']
@@ -55,8 +61,8 @@ def txtPrint(data, query):
        i += 1
        print(f"{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n")
        print("--------------------------------------")
-       cdata = (f"TEXTO{i}\n\n{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n\n\n\n\n")
-       file = OpenFileWriteTxt(query,cdata)
+       cdata += (f"TEXTO{i}\n\n{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n\n\n\n\n")
+    file = OpenFileWriteTxt(query,cdata)
 
 def jsonPrint(data, query):
     file = OpenFileWriteJson(query, data)
@@ -87,6 +93,7 @@ class StringUrl(ApiKey):
         if LanguageQuery == '1':
             StringUrl.url += StringUrl.language
         StringUrl.url += (f'q={Query}&')
+        StringUrl.url += StringUrl.pagesize
         StringUrl.url += StringUrl.key
         StringUrl.query += Query
         
@@ -119,4 +126,6 @@ if __name__ == '__main__':
         txtPrint(data, StringUrl.query)
     elif escolha=='json':
         jsonPrint(data, StringUrl.query)
-    print (data)
+    print ("Programa finalizado, seu arquivo foi gerado na Área de Trabalho")
+    print("*Aperte qualquer tecla para sair*")
+    str(input(""))
