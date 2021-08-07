@@ -4,10 +4,12 @@
 
 <h3 align="center"> For english instructions, please access the README-en.md file</h3>
 
-<p align="center"> PARA BAIXAR ESSE SCRIPT COMO .EXE E RODAR NO SEU COMPUTADOR, ENTRE NESTE [REPOSITÓRIO](https://github.com/GabrielTheophilo/NewsApiScript.exe)</p>
+
 
 
 # Uso deste script
+
+PARA BAIXAR ESSE SCRIPT COMO .EXE E RODAR NO SEU COMPUTADOR, ENTRE NESTE [REPOSITÓRIO](https://github.com/GabrielTheophilo/NewsApiScript.exe)
 
 No momento, este script precisa de Python 3 para rodar (e a biblioteca adicional requests, que pode ser baixada ao rodar o requirements.txt)
 
