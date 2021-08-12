@@ -29,10 +29,10 @@ class TxtParse:
                print(f"{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n")
                print("--------------------------------------")
                cdata += (f"TEXTO{i}\n\n{a}\n{b}\n{c}\n{d}\n{e}\n{f}\n{g}\n\n\n\n\n")
-            file = FileWrite.OpenFileWriteTxt(query,cdata)
+            FileWrite.OpenFileWriteTxt(query,cdata)
         except UnicodeEncodeError:
             print("Algum erro ocorreu durante a gravação em texto, o arquivo será gravado em .json")
             FileWrite.OpenFileWriteJson(query, jsondata)
 
     def jsonPrint(data, query):
-        file = FileWrite.OpenFileWriteJson(query, data)
+        FileWrite.OpenFileWriteJson(query, data)
