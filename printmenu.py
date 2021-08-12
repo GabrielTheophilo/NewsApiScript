@@ -1,3 +1,7 @@
+# Arquivo que contém os menus para interação na linha de comando do terminal
+# Classe >PrintMenu< contém as artes que irão compor o menu e, também, os outros menus para auxiliar o usuário na pesquisa
+# 
+# ARQUIVOS DEPENDENTES: newsapiscript.py
 
 class PrintMenu():
     a = (r'''ooooo      ooo                                           .o.                   o8o   .oooooo..o                     o8o                 .   

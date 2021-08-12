@@ -1,3 +1,9 @@
+# Arquivo que contém a lógica da construção da URL através de certos inputs que servirão para delimitar o escopo da pesquisa
+# Classe StringUrl contém os pedaços da url para ser montada, junto aos termos de pesquisa do usuário e os escopos que serão delimitados durante a execução do programa
+# 
+# ARQUIVOS DEPENDENTES: newsapiscript.py
+
+
 from apikey import ApiKey
 
 class StringUrl(ApiKey):
