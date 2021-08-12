@@ -1,3 +1,12 @@
+# Arquivo principal(main) que coordena a execução do script. A requisição inicial é feita por meio deste script, que:
+#                                                                                                                   1 - Chama a função PrintMenu para exibir opções iniciais para o usuário
+#                                                                                                                   2 - Constrói a url de pesquisa do usuário e armazena na variável 
+#                                                                                                                   3 - Faz a requisição para a Api
+#                                                                                                                   4 - Guarda as respostas em variáveis(json_data>serializada; data>organizada em json identado)
+#                                                                                                                   5 - Oferece ao usuário guardar os dados obtidos em texto ou json
+#                                                                                                                   6 - Termina a execução do programa
+#
+
 import requests
 import json
 from apikey import ApiKey as ApiKey

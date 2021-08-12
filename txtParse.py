@@ -1,3 +1,8 @@
+# Arquivo que contém a lógica de separação do texto a partir do JSON recebido pela função principal(__init__ do módulo newsapiscript.py que faz requests a uma url e retorna um json)
+# Classe >TxtParse< recebe os dados e a string de pesquisa do usuário e divide o json em dados, separados por categorias e organizados para serem "impressos" no arquivo final
+# 
+# ARQUIVOS DEPENDENTES: newsapiscript.py
+
 import json
 from datetime import date
 from filewrite import *
