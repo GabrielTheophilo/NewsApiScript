@@ -11,30 +11,25 @@
 import os
 import os.path
 
-class FolderWrite:
-    def FolderWrite():
-        username = os.getlogin()
+class Folder:
+    username = os.getlogin()
+    def Folder():
         try:
-            os.mkdir(f'C:\\Users\\{username}\\Desktop\\NewsApiScript')
+            os.mkdir(f'C:\\Users\\{Folder.username}\\Desktop\\NewsApiScript')
             return 0
-            
+
         except:
             print("Pasta já existente na área de trabalho")
             return 1
 
+    def Path():
+        return (f'C:\\Users\\{Folder.username}\\Desktop\\NewsApiScript')
+
 class FileWrite:
     def OpenFileWriteJson(str,*args):
         username = os.getlogin()
-        
-        folder = FolderWrite.FolderWrite()
-        if folder == 0:
-            path = (f'C:\\Users\\{username}\\Desktop\\NewsApiScript')
-        if folder == 1:
-            try:
-                path = (f'C:\\Users\\{username}\\Desktop\\NewsApiScript')
-            except:
-                path = (f'C:\\Users\\{username}\\Desktop')
-        
+        Folder.Folder()
+        path = Folder.Path()
         try:
             file = open(f'{path}\\{str}.json', 'x')
             file.write(*args)
@@ -46,17 +41,9 @@ class FileWrite:
             file.close()
 
     def OpenFileWriteTxt(str,*args):
-        username = os.getlogin()
-        
-        folder = FolderWrite.FolderWrite()
-        if folder == 0:
-            path = (f'C:\\Users\\{username}\\Desktop\\NewsApiScript')
-        if folder == 1:
-            try:
-                path = (f'C:\\Users\\{username}\\Desktop\\NewsApiScript')
-            except:
-                path = (f'C:\\Users\\{username}\\Desktop')
-        
+
+        Folder.Folder()
+        path = Folder.Path()
         try:
             file = open(f'{path}\\{str}.txt', 'x')
             file.write(*args)
