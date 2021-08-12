@@ -15,7 +15,7 @@ class TxtParse:
             i = 0
             cdata = ''
             data_hoje = date.today()
-            cdata += (f'DATA DA PESQUISA: {data_hoje.day}/{data_hoje.month}/{data_hoje.year}')
+            cdata += (f'DATA DA PESQUISA: {data_hoje.day}/{data_hoje.month}/{data_hoje.year}\n')
             for x in wdata['articles']:
                print(i)
                a = wdata['articles'][i]['source']['name']
