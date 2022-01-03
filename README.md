@@ -1,13 +1,4 @@
-ooooo      ooo                                           .o.                   o8o   .oooooo..o                     o8o                 .   
-`888b.     `8'                                          .888.                  `"'  d8P'    `Y8                     `"'               .o8   
- 8 `88b.    8   .ooooo.  oooo oooo    ooo  .oooo.o     .8"888.     oo.ooooo.  oooo  Y88bo.       .ooooo.  oooo d8b oooo  oo.ooooo.  .o888oo 
- 8   `88b.  8  d88' `88b  `88. `88.  .8'  d88(  "8    .8' `888.     888' `88b `888   `"Y8888o.  d88' `"Y8 `888""8P `888   888' `88b   888   
- 8     `88b.8  888ooo888   `88..]88..8'   `"Y88b.    .88ooo8888.    888   888  888       `"Y88b 888        888      888   888   888   888   
- 8       `888  888    .o    `888'`888'    o.  )88b  .8'     `888.   888   888  888  oo     .d8P 888   .o8  888      888   888   888   888 . 
-o8o        `8  `Y8bod8P'     `8'  `8'     8""888P' o88o     o8888o  888bod8P' o888o 8""88888P'  `Y8bod8P' d888b    o888o  888bod8P'   "888" 
-                                                                    888                                                   888               
-                                                                   o888o                                                 o888o              
-                                                                                                                                         
+                                                                                                                  
 
 <h1 align="center"> NewsApiScript</h1>
 <p align="center">Este programa é feito para pesquisar diversos canais de notícias com uma palavra chave dada pelo usuário. Ele procura diversos sites como BBC, FoxNews, CBS e muitos outros. Instruções de uso abaixo</p>
