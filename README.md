@@ -1,3 +1,14 @@
+ooooo      ooo                                           .o.                   o8o   .oooooo..o                     o8o                 .   
+`888b.     `8'                                          .888.                  `"'  d8P'    `Y8                     `"'               .o8   
+ 8 `88b.    8   .ooooo.  oooo oooo    ooo  .oooo.o     .8"888.     oo.ooooo.  oooo  Y88bo.       .ooooo.  oooo d8b oooo  oo.ooooo.  .o888oo 
+ 8   `88b.  8  d88' `88b  `88. `88.  .8'  d88(  "8    .8' `888.     888' `88b `888   `"Y8888o.  d88' `"Y8 `888""8P `888   888' `88b   888   
+ 8     `88b.8  888ooo888   `88..]88..8'   `"Y88b.    .88ooo8888.    888   888  888       `"Y88b 888        888      888   888   888   888   
+ 8       `888  888    .o    `888'`888'    o.  )88b  .8'     `888.   888   888  888  oo     .d8P 888   .o8  888      888   888   888   888 . 
+o8o        `8  `Y8bod8P'     `8'  `8'     8""888P' o88o     o8888o  888bod8P' o888o 8""88888P'  `Y8bod8P' d888b    o888o  888bod8P'   "888" 
+                                                                    888                                                   888               
+                                                                   o888o                                                 o888o              
+                                                                                                                                         
+
 <h1 align="center"> NewsApiScript</h1>
 <p align="center">Este programa é feito para pesquisar diversos canais de notícias com uma palavra chave dada pelo usuário. Ele procura diversos sites como BBC, FoxNews, CBS e muitos outros. Instruções de uso abaixo</p>
 <p align="center">Este script consome a NewsApi para trazer diversas notícias de uma vez. Retorna um arquivo .txt com as notícias, links e informações. Ideal para pesquisas onde há a necessidade de pesquisar diversas fontes de uma vez</p>
@@ -9,9 +20,8 @@
 
 # Uso deste script
 
-PARA BAIXAR ESSE SCRIPT COMO .EXE E RODAR NO SEU COMPUTADOR, ENTRE NESTE [REPOSITÓRIO](https://github.com/GabrielTheophilo/NewsApiScript.exe)
-
-No momento, este script precisa de Python 3 para rodar (e a biblioteca adicional requests, que pode ser baixada ao rodar o requirements.txt)
+Este script requer python3.8 ou mais recente para rodar (compatibilidade não testada com versões abaixo)
+Para checar os requisitos das bibliotecas, entre no arquivo [requirements.txt](https://github.com/GabrielTheophilo/NewsApiScript/blob/main/requirements.txt)
 
 1 - Para usar esse script python primeiramente você precisa clonar o repositório: 
 ```bash
@@ -29,9 +39,7 @@ python -m pip install requirements.txt
 
 5 - Abra o arquivo apikey.py e adicione a chave de 32 caracteres após o 'apikey=', exemplo: 'apikey=SUACHAVEAQUI'
 
-6 - Rode o newsscript.py e siga os comandos do terminal
-
-IMPORTANTE: Se você tem o plano gratuito da API, sua pesquisa estará limitada a uma página, então quando o programa pedir o número de páginas da sua busca, por favor especifique como "1", ou a API retornará um erro após imprimir a primeira página, com o código "maximumResultsReached".
+6 - Rode o newsapicript.py e siga os comandos do terminal
 
 7 - Depois de rodar o código, um arquivo .json será criado com as informações e links sobre o tópico que você pesquisou. Abra com qualquer editor de texto ou IDE de sua preferência para acessar o arquivo .json.
 
