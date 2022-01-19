@@ -4,7 +4,7 @@
 <p align="center">Este programa é feito para pesquisar diversos canais de notícias com uma palavra chave dada pelo usuário. Ele procura diversos sites como BBC, FoxNews, CBS e muitos outros. Instruções de uso abaixo</p>
 <p align="center">Este script consome a NewsApi para trazer diversas notícias de uma vez. Retorna um arquivo .txt com as notícias, links e informações. Ideal para pesquisas onde há a necessidade de pesquisar diversas fontes de uma vez</p>
 
-<h3 align="center"> For english instructions, please access the README-en.md file</h3>
+<h3 align="center"> For english instructions, please access the <a href="https://github.com/GabrielTheophilo/NewsApiScript/blob/main/README-en.md">README-en.md</a> file</h3>
 
 
 
