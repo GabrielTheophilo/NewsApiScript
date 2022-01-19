@@ -67,7 +67,7 @@ dP     dP `88888P' 8888P Y8P  `88888P' 88     88  88Y888P' dP  Y88888P  `88888P'
         if random1==5:
             print(PrintMenu.f)
             
-    def printMenu():
+    def Menu():
         #Main menu to output status choices to users
         PrintMenu.__init__()
         print("Quais notícias estarão na sua pesquisa?")
@@ -76,13 +76,13 @@ dP     dP `88888P' 8888P Y8P  `88888P' 88     88  88Y888P' dP  Y88888P  `88888P'
         print("Tudo")
         print("---------------------------------------")
     
-    def printEndMenu():
+    def EndMenu():
         print ("Programa finalizado, seu arquivo foi gerado na Área de Trabalho")
         print("*Aperte qualquer tecla para sair*")
         str(input(""))
         
 if __name__=='__main__':
-    PrintMenu.printMenu()
+    PrintMenu.Menu()
     
     
     

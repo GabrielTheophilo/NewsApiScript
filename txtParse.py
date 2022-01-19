@@ -36,3 +36,31 @@ class TxtParse:
 
     def jsonPrint(data, query):
         FileWrite.OpenFileWriteJson(query, data)
+        
+    def csvPrint(data, query):
+        try:
+            wdata = json.loads(data)
+            jsondata=json.dumps(data)
+            i = 0
+            cdata = ''
+            data_hoje = date.today()
+            cdata += (f'DATA DA PESQUISA: {data_hoje.day}/{data_hoje.month}/{data_hoje.year},Site, Autor, Assunto,Link,Data\n')
+            for x in wdata['articles']:
+               print(i)
+               a = wdata['articles'][i]['source']['name']
+               b = wdata['articles'][i]['author']
+               c = wdata['articles'][i]['title']
+               d = wdata['articles'][i]['description']
+               e = wdata['articles'][i]['url']
+               f = wdata['articles'][i]['publishedAt']
+               g = wdata['articles'][i]['content']
+               i += 1
+               print(f"{a},{b},{c},{d},{e},{f},{g}\n")
+               print("--------------------------------------")
+               cdata += (f"{i},{a},{b},{c},{e},{f}\n")
+            FileWrite.OpenFileWriteCsv(query,cdata)
+        except UnicodeEncodeError:
+            print("Algum erro ocorreu durante a gravação em texto, o arquivo será gravado em .json")
+            FileWrite.OpenFileWriteJson(query, jsondata)
+
+    

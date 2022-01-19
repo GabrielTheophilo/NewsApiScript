@@ -27,7 +27,6 @@ class Folder:
 
 class FileWrite:
     def OpenFileWriteJson(str,*args):
-        username = os.getlogin()
         Folder.Folder()
         path = Folder.Path()
         try:
@@ -41,7 +40,6 @@ class FileWrite:
             file.close()
 
     def OpenFileWriteTxt(str,*args):
-
         Folder.Folder()
         path = Folder.Path()
         try:
@@ -51,5 +49,18 @@ class FileWrite:
 
         except:
             file = open(f'{path}\\{str}.txt', 'a')
+            file.write(*args)
+            file.close()
+            
+    def OpenFileWriteCsv(str,*args):
+        Folder.Folder()
+        path = Folder.Path()
+        try:
+            file = open(f'{path}\\{str}.csv', 'x')
+            file.write(*args)
+            file.close()
+
+        except:
+            file = open(f'{path}\\{str}.csv', 'a')
             file.write(*args)
             file.close()
