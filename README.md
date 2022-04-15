@@ -1,7 +1,10 @@
                                                                                                                   
+<div align="center">
+<h1> NewsApiScript</h1>
 
-<h1 align="center"> NewsApiScript</h1>
-<p align="center"  style="text-align: justify;">Este programa é feito para pesquisar diversos canais de notícias com uma palavra chave dada pelo usuário. Ele procura diversos sites como BBC, FoxNews, CBS e muitos outros. Instruções de uso abaixo
+<img src="http://ForTheBadge.com/images/badges/made-with-python.svg" height="25px;">
+</div>
+<p align="center"  style="text-align: justify;"><br>Este programa é feito para pesquisar diversos canais de notícias com uma palavra chave dada pelo usuário. Ele procura diversos sites como BBC, FoxNews, CBS e muitos outros. Instruções de uso abaixo
 Este script consome a NewsApi para trazer diversas notícias de uma vez. Retorna um arquivo .txt com as notícias, links e informações. Ideal para pesquisas onde há a necessidade de pesquisar diversas fontes de uma vez</p>
 
 <h3 align="center" > For english instructions, please access the <a href="https://github.com/GabrielTheophilo/NewsApiScript/blob/main/README-en.md">README-en.md</a> file</h3>
